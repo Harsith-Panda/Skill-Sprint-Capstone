@@ -1,8 +1,12 @@
-import React from 'react'
+import NavbarStarting from '../components/NavbarStarting'
 
 function Dashboard() {
   return (
-    <div>Dashboard</div>
+    <div>
+        <header>
+            Dashboard
+        </header>
+    </div>
   )
 }
 
