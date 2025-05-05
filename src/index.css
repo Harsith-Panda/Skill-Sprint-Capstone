@@ -3,5 +3,30 @@
 html, body{
   padding: 0;
   margin: 0;
-  background-color: oklch(98.5% 0.001 106.423);
+  background-color: #F9F5FF	;
+  font-family: "Familjen Grotesk", sans-serif;
+}
+
+@utility scrollbar-hidden {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@theme {
+  --color-surface: #FFFFFF;
+  --color-text-primary: #1E1B2E;
+  --color-text-secondary: #6B7280;
+  --color-primary: #6B63FF;
+  --color-primary-hover: #403b99;
+  --color-success: #10B981;
+  --color-danger: #EF4444;
+  --color-border: #E0E7FF;
+  --color-shadow: rgba(139, 92, 246, 0.1);
+  --animate-infinite-scroll: 'infinite-scroll 25s linear infinite';
+
+  @keyframes infinite-scroll {
+    from: { transform: translateX(0) }
+    to: { transform: translateX(-100%) }
+  }
 }
