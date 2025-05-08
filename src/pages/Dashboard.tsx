@@ -1,7 +1,6 @@
-import { useState } from 'react'
-import NavbarStarting from '../components/NavbarStarting'
 import { useStore } from '../app/config/store/store'
 import { auth } from '../app/config/firebase'
+import NavbarStarting from '../components/NavbarStarting';
 
 function Dashboard() {
   const user = useStore(state => state.user)
@@ -10,9 +9,10 @@ function Dashboard() {
   return (
     <div>
         <header>
-            Dashboard
-            {user.displayName}
+          <NavbarStarting />
         </header>
+        Dashboard
+        {user?.displayName}
     </div>
   )
 }
