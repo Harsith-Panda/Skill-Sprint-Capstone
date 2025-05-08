@@ -1,4 +1,4 @@
-import NavbarStarting from '../components/NavbarStarting'
+import NavbarStarting from '../components/NavbarStarting';
 import Landingimage from '../assets/Online Learning Illustration.svg';
 import { useNavigate } from 'react-router';
 import { useStore } from '../app/config/store/store.ts';
