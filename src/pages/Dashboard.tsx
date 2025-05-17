@@ -11,8 +11,6 @@ function Dashboard() {
         <header>
           <NavbarStarting />
         </header>
-        Dashboard
-        {user?.displayName}
     </div>
   )
 }

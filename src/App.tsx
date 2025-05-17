@@ -6,6 +6,8 @@ import LandingPage from './pages/LandingPage.tsx';
 import Login from './pages/Login.tsx';
 import Dashboard from './pages/Dashboard.tsx';
 import { ProtectedRoutes } from './app/utils/ProtectedRoutes.tsx';
+import Course from './pages/Course.tsx';
+import Courses from './pages/Courses.tsx';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +25,18 @@ const router = createBrowserRouter([
         <Dashboard />
       </ProtectedRoutes>
     )
+  },
+  {
+    path: "/courses",
+    element: (
+      <ProtectedRoutes>
+        <Courses />
+      </ProtectedRoutes>
+    )
+  },
+  {
+    path: '/course/:courseId',
+    element: <Course />
   }
 ])
 
@@ -42,7 +56,7 @@ function App() {
       <div className="flex items-center justify-center min-h-screen bg-white">
         <div className="w-16 h-16 border-4 border-blue-500 border-t-transparent border-solid rounded-full animate-spin"></div>
       </div>
-    ); // Show loading while Firebase is restoring user
+    ); 
   }
 
   return (
