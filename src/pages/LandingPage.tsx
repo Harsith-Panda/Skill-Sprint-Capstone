@@ -102,7 +102,6 @@ function LandingPage() {
           </ul>
         </div>
 
-        {/* CTA */}
         <div className="text-center my-16 space-y-6">
           <p className="text-2xl md:text-3xl">Ready to sprint? Start learning smarter today.</p>
           <button
@@ -114,7 +113,6 @@ function LandingPage() {
         </div>
       </main>
 
-      {/* Footer */}
       <footer className="flex flex-col md:flex-row justify-between items-center p-6 bg-shadow border-t border-primary text-center md:text-left">
         <p>©️ {new Date().getFullYear()} Skill Sprint</p>
         <p>Developed By S.Harsith Priyan</p>
