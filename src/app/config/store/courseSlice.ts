@@ -20,12 +20,13 @@ type courseActions = {
     getCourses: () => Promise<void>
 }
 
-export type coursesSlice = {courses: Course[]} & courseActions;
+export type coursesSlice = {courses: Course[], thirdIsLoading: boolean} & courseActions;
 
 const courseDocRef = collection(db, "courses");
 
 export const createCourseSlice: StateCreator<coursesSlice, [], [['zustand/immer', unknown]], coursesSlice> = immer((set)=> ({
     courses: [] as Course[],
+    thirdIsLoading: false,
     addCourse: async (course: Omit<Course, "id">) => {
         await setDoc(doc(db, "courses", course.title + auth.currentUser?.uid), course);
 
@@ -34,7 +35,7 @@ export const createCourseSlice: StateCreator<coursesSlice, [], [['zustand/immer'
     deleteCourse: async (courseId: Course["id"]) => {
         try {
             const docInst = doc(db, "courses", courseId);
-            await deleteDoc(docInst); // ensure this line works
+            await deleteDoc(docInst);
             set((state) => {
               state.courses = state.courses.filter((val) => val.id !== courseId);
             });

@@ -19,8 +19,9 @@ function NavbarStarting() {
       </div>
 
       <div className="hidden md:flex gap-10 items-center">
-        <Link to="/courses" className="text-lg font-medium text-primary">Courses</Link>
         <Link to="/dashboard" className="text-lg font-medium text-primary">Dashboard</Link>
+        <Link to="/courses" className="text-lg font-medium text-primary">Courses</Link>
+        {user !== null && <Link to="/profile" className="text-lg font-medium text-primary">Profile</Link>}
         {user === null ? (
           <button className="bg-primary p-3 rounded-4xl hover:bg-primary-hover text-white" onClick={() => navigate('/login')}>
             Login / Register
@@ -43,8 +44,9 @@ function NavbarStarting() {
             <span className="text-xl font-extrabold">Skill-Sprint</span>
           </div>
 
-          <Link to="/courses" className="text-lg font-medium text-primary" onClick={() => setIsOpen(false)}>Courses</Link>
           <Link to="/dashboard" className="text-lg font-medium text-primary" onClick={() => setIsOpen(false)}>Dashboard</Link>
+          <Link to="/courses" className="text-lg font-medium text-primary" onClick={() => setIsOpen(false)}>Courses</Link>
+          {user !== null && <Link to="/profile" className="text-lg font-medium text-primary" onClick={() => setIsOpen(false)}>Profile</Link>}
           {user === null ? (
             <button className="bg-primary p-3 rounded-4xl hover:bg-primary-hover text-white" onClick={() => { setIsOpen(false); navigate('/login'); }}>
               Login / Register

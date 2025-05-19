@@ -8,6 +8,7 @@ import Dashboard from './pages/Dashboard.tsx';
 import { ProtectedRoutes } from './app/utils/ProtectedRoutes.tsx';
 import Course from './pages/Course.tsx';
 import Courses from './pages/Courses.tsx';
+import Profile from './pages/Profile.tsx';
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
   {
     path: '/course/:courseId',
     element: <Course />
+  },
+  {
+    path:'/profile',
+    element: <Profile />
   }
 ])
 
@@ -44,6 +49,7 @@ const router = createBrowserRouter([
 function App() {
   const initAuth = useStore(state => state.initAuth);
   const isloading = useStore(state => state.isloading);
+  const secondIsloading = useStore(state => state.secondIsLoading);
 
   useEffect(() => {
     const unsub = initAuth();
