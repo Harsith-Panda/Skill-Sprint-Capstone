@@ -1,4 +1,4 @@
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { onAuthStateChanged } from "firebase/auth";
 import type { StateCreator } from "zustand";
 import { auth } from "../firebase";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
@@ -22,7 +22,6 @@ export const createUserSlice: StateCreator<userSlice, [] ,[["zustand/persist", u
     user: null,
     isloading: false,
     initAuth: () => {
-        console.log("Hi There")
         set({ isloading: true });
 
         const unsub = onAuthStateChanged(auth, (user) => {

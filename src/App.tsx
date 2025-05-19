@@ -49,7 +49,6 @@ const router = createBrowserRouter([
 function App() {
   const initAuth = useStore(state => state.initAuth);
   const isloading = useStore(state => state.isloading);
-  const secondIsloading = useStore(state => state.secondIsLoading);
 
   useEffect(() => {
     const unsub = initAuth();

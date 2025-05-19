@@ -51,7 +51,6 @@ function LandingPage() {
       </header>
 
       <main className="px-4 md:px-20 lg:px-32">
-        {/* Hero Section */}
         <div className="flex flex-col items-center my-10 space-y-5">
           <img src={Landingimage} className="h-60 w-60 md:h-80 md:w-80" />
           <p className="text-xl md:text-3xl text-center">
@@ -65,7 +64,6 @@ function LandingPage() {
           </button>
         </div>
 
-        {/* Testimonials */}
         <section className="my-16">
           <h1 className="text-primary text-2xl font-extrabold text-center mb-6">Testimonials</h1>
           <div className="flex gap-6 overflow-x-auto px-4 py-4 scrollbar-hidden">
@@ -80,7 +78,6 @@ function LandingPage() {
           </div>
         </section>
 
-        {/* Key Features */}
         <section className="my-16">
           <h1 className="text-primary text-2xl font-extrabold text-center mb-6">Key Features</h1>
           <div className="flex flex-col md:flex-row justify-center gap-12">
@@ -95,10 +92,14 @@ function LandingPage() {
           </div>
         </section>
 
-        {/* How it works */}
         <div className="text-center my-16 space-y-4">
-          <h1 className="text-primary text-2xl font-extrabold">How does it work?</h1>
-          <p className="text-lg">Paste playlist → Track → Complete</p>
+          <h1 className="text-primary text-2xl font-extrabold mb-10">How does it work?</h1>
+          <ul className="text-xl mb-10">
+            <li className='justify-self-start'>Create a Course</li>
+            <li className='justify-self-start'>List Videos in that Course</li>
+            <li className='justify-self-start'>Paste the links and add videos in respective Course</li>
+            <li className='justify-self-start'>All Done! Now track your progress easily.</li>
+          </ul>
         </div>
 
         {/* CTA */}
