@@ -3,7 +3,7 @@ import { getAuth, signOut, onAuthStateChanged, User } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import NavbarStarting from '../components/NavbarStarting';
 
-function ProfileTab() {
+function Profile() {
   const auth = getAuth();
   const navigate = useNavigate();
   const [user, setUser] = useState<User | null>(null);
@@ -12,6 +12,10 @@ function ProfileTab() {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
     });
+
+    if (user === null) {
+      navigate('/login');
+    }
 
     return () => unsubscribe();
   }, []);
@@ -50,4 +54,4 @@ function ProfileTab() {
   );
 }
 
-export default ProfileTab;
+export default Profile;
